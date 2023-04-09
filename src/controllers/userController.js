@@ -2,7 +2,6 @@ const userModel = require('../models/userModel')
 const jwt = require('jsonwebtoken')
 
 exports.loginUser = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
     try {
         let data = req.body
         let { email, password } = data

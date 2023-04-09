@@ -13,6 +13,20 @@ mongoose.connect('mongodb+srv://TusharJainFunctionup:functionup@tusharjaindb.zxe
     .then(() => console.log("Db connected successfully"))
     .catch((err) => console.log(err))
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With,content-type"
+    );
+    res.setHeader("Access-Control-Allow-Credentials", true);
+    next();
+});
+
 app.use('/', route)
 
 let port = process.env.PORT || 3001;

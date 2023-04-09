@@ -2,7 +2,6 @@ const commentModel = require('../models/commentModel')
 const postModel = require('../models/postModel')
 
 exports.createPost = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
 
     try {
         let data = req.body
@@ -23,7 +22,6 @@ exports.createPost = async function (req, res) {
 
 exports.getPost = async function (req, res) {
 
-    res.setHeader('Access-Control-Allow-Origin', '*')
 
     try {
         let postData = await postModel.find()
@@ -36,7 +34,6 @@ exports.getPost = async function (req, res) {
 
 exports.getPostById = async function (req, res) {
 
-    res.setHeader('Access-Control-Allow-Origin', '*')
 
     try {
         let postId = req.params.postId
@@ -58,7 +55,6 @@ exports.getPostById = async function (req, res) {
 }
 
 exports.updatePost = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
 
     try {
         let postId = req.params.postId
