@@ -18,5 +18,5 @@ app.use('/',route)
 let port = process.env.PORT || 3001;
 
 app.listen(port, ()=> {
-    console.log(`Port is running on 3001 ${port}`)
+    console.log(`Port is running on ${port}`)
 })
